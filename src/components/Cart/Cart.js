@@ -1,5 +1,6 @@
 import React from 'react';
 import { prettyDOM } from '@testing-library/react';
+import './Cart.css'
 
 const Cart = (props) => {
 const cart = props.cart;
@@ -21,13 +22,14 @@ else if (total == 0){
 
 let tax = total / 10;
     return (
-        <div>
+        <div className="cart-items">
             <h3>Order Summary</h3>
             <p>Items Orderd : {cart.length}</p>
             <p>Product Price : ${total}</p>
             <p>Tax : ${tax}</p>
             <p>Shipping Costs : ${shipping}</p>
             <p>Total Price : ${total + shipping}</p>
+            <button>Place order</button>
         </div>
     );
 };
